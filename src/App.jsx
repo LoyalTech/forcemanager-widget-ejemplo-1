@@ -22,7 +22,8 @@ function App() {
   useEffect(() => {
     if (context === undefined) return;
     setError(false);
-
+    // by default load entity ID 106 id context is empty
+    if (context.entityId === '') context.entityId = '106';
     axios
       .get('/users/')
       .then((usersData) => {
@@ -35,7 +36,7 @@ function App() {
             const statuses = opportunityStatuses;
             // get logs
             axios
-              .post('/procedure/opportunityStatusChangelog', { opportunityId: '106' })
+              .post('/procedure/opportunityStatusChangelog', { opportunityId: context.entityId })
               .then((opportunityData) => {
                 let rowData = [];
                 opportunityData.forEach((item) => {
