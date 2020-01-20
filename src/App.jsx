@@ -10,7 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const [usersData, setUsersData] = useState([{ name: 'm' }]);
+  const [usersData, setUsersData] = useState();
   const [opportinityChangeLog, setOpportinityChangeLog] = useState();
   const [opportunityStatuses, setOpportunityStatuses] = useState();
 
